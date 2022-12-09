@@ -1,0 +1,28 @@
+<div #target>
+<div class="container1" >
+    <div class="card" *ngFor="let card of cards1">
+    
+        <div class="imgBox">
+          <img src={{card.source}} alt="dog picture" class="dog" height="200" width="150">
+        </div>
+      
+        <div class="contentBox">
+          <h3>{{card.name}}</h3>
+          <a href="https://www.facebook.com/FundatiaNoroc/" class="button" target="_">{{card.description}}Adopt me now!</a>
+        </div>
+      </div>
+      </div>
+<div class="container2" >
+    <div class="card" *ngFor="let card of cards2">
+    
+        <div class="imgBox">
+          <img src={{card.source}} alt="dog picture" class="dog">
+        </div>
+      
+        <div class="contentBox">
+          <h3>{{card.name}}</h3>
+          <a href="https://www.facebook.com/FundatiaNoroc/" class="button" target="_">{{card.description}}Adopt me now!</a>
+        </div>
+      </div>
+      </div>
+    </div>

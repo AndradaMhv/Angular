@@ -1,0 +1,19 @@
+
+    
+    .social {
+        background: white;
+        color: black;
+        padding: 50px;
+        display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .fb{
+        padding:15px;
+    }
+    .pin{
+        padding:15px;
+    }
+    .insta{
+        padding:15px;
+    }
