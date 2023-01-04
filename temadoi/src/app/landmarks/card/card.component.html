@@ -1,0 +1,12 @@
+<nz-card style="width:400px;" [nzTitle]="landmark.title" [nzExtra]="extraTemplate">
+    <img [src]="landmark.image" alt="" />
+    <p>{{ landmark.description }}</p>
+  </nz-card>
+  <ng-template #extraTemplate>
+    <button nz-button [nzType]="'primary'" (click)="showModal()"><span>Explore</span></button>
+  </ng-template>
+    <nz-modal [(nzVisible)]="isVisible" [nzTitle]="landmark.title" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+      <ng-container *nzModalContent>
+        <p>{{landmark.modal}}</p>
+      </ng-container>
+    </nz-modal>
