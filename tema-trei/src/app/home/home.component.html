@@ -1,0 +1,32 @@
+<div class="search-box">
+<input class= "box" type="text" [(ngModel)]="ttitlu" (input)="Erase()"/>
+        <span>
+            <button class="filter-btn"(click)="Search()" >Filtreaza</button>
+        </span>
+    
+</div>
+<div class="sort-btn">
+    <span>
+        <button class="sort"(click)="SendToSort()">Sorteaza alfabetic</button>
+        <button class="cancelsrt" (click)="CancelSort()">Anuleaza sortarea</button>
+        
+    </span>
+    
+</div> 
+<br/>
+<table class = "table">
+    <tr>
+        <th>ID</th>
+        <th>Titlu</th>
+        <th>Prenume Autor</th>
+        <th>Nume Autor</th>
+        <th>Cod</th>
+    </tr>
+    <tr *ngFor='let carte of cartic'>
+        <td>{{carte.ID}}</td>
+        <td>{{carte.titlu}}</td>
+        <td>{{carte.prenumeAutor}}</td>
+        <td>{{carte.numeAutor}}</td>
+        <td>{{carte.cod}}</td>
+    </tr>
+</table>
