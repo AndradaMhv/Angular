@@ -1,0 +1,24 @@
+<div class="homepage">
+  <h1>AMConceptx</h1>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+<body style="margin: 0; padding: 0">
+  <nav>
+    <ul>
+      <li><a (click)="scrollTo('aboutme-section')">About Me</a></li>
+      <li><a (click)="scrollTo('artlist-section')">My work</a></li>
+      <li><a (click)="scrollTo('orders-section')">Order now!</a></li>
+
+      
+    </ul>
+  </nav>
+        <img class="Im1" src="assets\Imagine1.jpg" style="width:100%">
+</body>
+</div>
+<app-aboutme style="display: block"></app-aboutme>
+<img class="Im2" src="assets\Imagine2.jpg" style="width:100%">
+<app-cardlist></app-cardlist>
+<img class="Im3" src="assets\Imagine3.jpg" style="width:100%">
+<app-ordertable></app-ordertable>
+<app-footer></app-footer>

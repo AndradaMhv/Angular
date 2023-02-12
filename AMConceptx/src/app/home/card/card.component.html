@@ -1,0 +1,16 @@
+<nz-card nzHoverable (click)="onImageClick(art)">
+  <img [src]="art.image"/>
+</nz-card>
+<div class="modal">
+
+  <nz-modal [(nzVisible)]="isVisible" (nzOnCancel)="handleModalCancel()" [nzFooter]="null">
+      <button type="button" class="close" (click)="handleModalCancel()">
+        <span aria-hidden="true">×</span>
+      </button>
+      <ng-container *nzModalContent>
+      <img class="modalimg" [src]="selectedArt.image"/>
+      
+  </ng-container>
+  </nz-modal>
+
+</div>

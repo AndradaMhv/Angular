@@ -1,0 +1,28 @@
+.About{
+    
+    background-color: #4a0f0f;
+    padding: 50px;
+}
+.container{
+    display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.textme{
+    width: 60%;
+    text-align: left;
+    color:white;
+    
+    
+}
+h2{
+    color:#ad7878
+}
+.imgme{
+    width: 40%;
+    text-align: right;
+}
+img {
+    max-width: 100%;
+    height: auto;
+  }

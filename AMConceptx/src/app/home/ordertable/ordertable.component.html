@@ -1,0 +1,108 @@
+<section id="orders-section" class="orderstable">
+    <div class="text">
+    <p> Prin formularul de mai jos puteti inregistra comenzi. Introduceti-va datele, alaturi de dimensiunile tabloului si niste cuvinte cheie referitoare la tabloul dorit.</p>
+    <p>Veti fi contactat in cel mai scurt timp pentru stabilirea detaliilor.</p>
+    <p> Va multumesc pentru sustinere!</p>
+</div>
+<div class="search-box">
+    <input class= "box" type="text" [(ngModel)]="nnume" (input)="Erase()"/>
+            <span>
+                <button class="filterbtn"(click)="Search()" >Filtreaza</button>
+            </span>
+        
+    </div>
+    <br/>
+    <table class="table">
+        <tr>
+            <th>
+              <span>Nume</span>
+              <button class="sortbtn" (click)="sortBy('nume')">Sort</button>
+            </th>
+            <th>
+              <span>Prenume</span>
+              <button class="sortbtn" (click)="sortBy('prenume')">Sort</button>
+            </th>
+            <th>
+              <span>Numar tel</span>
+              <button class="sortbtn" (click)="sortBy('nrtel')">Sort</button>
+            </th>
+            <th>
+              <span>Lungime</span>
+              <button class="sortbtn" (click)="sortBy('lungime')">Sort</button>
+            </th>
+            <th>
+              <span>Latime</span>
+              <button class="sortbtn" (click)="sortBy('latime')">Sort</button>
+            </th>
+            <th>
+              <span>Concept</span>
+              <button class="sortbtn"  (click)="sortBy('concept')">Sort</button>
+            </th>
+            <th>
+                <span>Actiune</span>
+            </th>
+          </tr>
+        <tr *ngFor='let order of orderss'>
+          <td>{{order.nume}}</td>
+          <td>{{order.prenume}}</td>
+          <td>{{order.nrtel}}</td>
+          <td>{{order.lungime}}</td>
+          <td>{{order.latime}}</td>
+          <td>{{order.concept}}</td>  
+            <td>
+            <button class="stergebtn" (click)="sterge(order)">Șterge</button>
+          </td> 
+        </tr>
+       
+      </table>
+
+      <button class="addbtn" (click)="showModal()">Adauga intrare</button>
+      <div class="modal">
+        <nz-modal [(nzVisible)]="isVisible" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+            <button type="button" class="close" (click)="handleCancel()">
+              <span aria-hidden="true">×</span>
+            </button>
+            <ng-container *nzModalContent>
+                <nz-form [formGroup]="validateForm">
+                <nz-form-item>
+                <nz-form-label>Nume</nz-form-label>
+                <nz-form-control nzErrorTip="*">
+                <input nz-input formControlName="orderNume" />
+                </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                <nz-form-label>Prenume</nz-form-label>
+                <nz-form-control nzErrorTip="*">
+                <input nz-input formControlName="orderPrenume" />
+                </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                <nz-form-label>Numar telefon</nz-form-label>
+                <nz-form-control nzErrorTip="Introduceti un numar de telefon valid!">
+                <input nz-input formControlName="orderNrtel" />
+                </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                <nz-form-label>Lungime</nz-form-label>
+                <nz-form-control nzErrorTip="Introduceti o lungime valida!">
+                <input nz-input formControlName="orderLungime" />
+                </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                <nz-form-label>Latime</nz-form-label>
+                <nz-form-control nzErrorTip="Introduceti o latime valida!">
+                <input nz-input formControlName="orderLatime" />
+                </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                <nz-form-label>Concept</nz-form-label>
+                <nz-form-control nzErrorTip="*">
+                <input nz-input formControlName="orderConcept" />
+                </nz-form-control>
+                </nz-form-item>
+                </nz-form>
+                </ng-container>
+        </nz-modal>
+      
+      </div>
+</section>
